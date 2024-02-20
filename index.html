@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio website</title>
+    <!-- <link rel="stylesheet" href="Style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *{margin: 0; padding: 0;box-sizing: border-box;}
+        html{
+            scroll-behavior: smooth;
+        }
+body
+{
+    background-color: #080808;
+    color:white;
+}
+#header
+{
+width: 100%;
+height: 100vh;
+background-image: url(aa/3.png);
+background-size: cover;
+background-position: center;
+}
+.container
+{
+    padding: 5px 5%;
+}
+nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo
+{
+    width: 140px;
+}
+nav ul li
+{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 10px;
+}
+nav ul li a
+{
+    color:#fff ;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after
+{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after
+{
+    width: 100%;
+}
+.header-text p
+{
+    font-size: 25px;
+    margin-top: 20%;
+    color: #ff004f;
+}
+.header-text h1
+{
+    font-size: 40px;
+    color: #fff;
+}
+
+.header-text h1 span
+{
+    color: #ff004f;
+}
+/*-----about-----*/
+#about
+{
+    padding: 60px 0;
+    background-color: black;
+    color: #fff;
+}
+.row
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1
+{
+    flex-basis: 35%;
+}
+.about-col-1 img
+{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2
+{
+    flex-basis: 60%;
+}
+.sub-title
+{
+    font-size:60px;
+    font-weight: 600;
+}
+.tab-title
+{
+    display: flex;
+    margin: 20px 0px 40px;
+}
+.tab-links
+{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after
+{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition:0.5s;
+}
+.tab-links.active-link::after
+{
+    width:50%;
+}
+.tab-contents ul li
+{
+    list-style: none;
+    margin: 10px 0px;
+}
+.tab-contents ul li span
+{
+    color: #ff004f;
+    font-size:14px;
+}
+.tab-contents
+{
+    display: none;
+}
+.tab-contents.active-tab
+{
+    display: block;
+}
+/*------ Services-------*/
+#services
+{
+    background-color: #080808;
+    color: #fff;
+}
+.service-list
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.service-list div
+{
+    background-color: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform;
+}
+.service-list div i
+{
+        font-size: 50px;
+        margin-bottom: 30px;
+
+}
+.service-list div h2
+{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+}
+.service-list div a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: px;
+    display: inline block;
+}
+.service-list div:hover
+{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+/*-------portfolio---------*/
+#portfolio
+{
+    background-color: #080808;
+    color: white;
+}
+.work-list
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+.work
+{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img
+{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: tranform 0.5s;
+}
+.layer
+{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3
+{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a
+{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+
+}
+.work:hover img
+{
+    transform: scale(1.1);
+}
+.work:hover .layer
+{
+    height: 100%;
+}
+.btn
+{
+    display: block;
+    margin: 30px auto;
+    width: fit-content;
+    border:1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover
+{
+    background: #ff004f;
+}
+/*-------contact------*/
+#contact
+{
+    color: #fff;
+}
+.contact-left
+{
+    flex-basis: 35%;
+
+}
+.contact-right
+{
+    flex-basis: 60%;
+    
+}
+.contact-left p
+{
+    margin-top: 30px;
+    
+}
+.contact-left p i
+{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons
+{
+    margin-top: 30px;
+}
+.social-icons a
+{
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 15px;
+    color: #ababab;
+    display: inline;
+    transition: tranform 0.5s;
+}
+.social-icons a:hover
+{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.btn.btn2
+{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form
+{
+        width: 100%;
+
+}
+.form input, textarea
+{
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin:15px 0;
+        color: #fff;
+        font-size:18px;
+        border-radius: 6px;
+}
+.form btn2
+{
+    padding: 14px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright
+{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+
+}
+.copyright i
+{
+    color: #ff004f;
+}
+
+/*-----------------------small screens----------*/
+@media only screen and (max-width:600px)
+{
+        .header-text
+        {
+            margin-top:80%;
+            font-size: 16px;
+        }
+        .header-text h1
+        {
+            font-size: 30px;
+        }
+        
+        .sub-title
+        {
+            font-size: 40px;
+        }
+        .about-col-1,.about-col-2
+        {
+            flex-basis: 100%;
+        }
+        .about-col-1
+        {
+            margin-bottom: 30px;
+
+        }
+        .about-col-2
+        {
+            font-size: 14px;
+        }
+        .tab-links
+        {
+            font-size: 16px;
+            margin-left: 20px;
+        }
+        .contact-left,.contact-right
+        {
+            flex-basis: 100%;
+        }
+        .copyright
+        {
+            font-size: 14px;
+        }
+
+
+
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="icons/37156835-designstyle-mango-l.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- <i class="fa-sharp fa-solid fa-xmark"></i> -->
+                </ul>
+                <!-- <i class="fa-solid fa-bars"></i> -->
+            </nav>
+            
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, I'm <span>Abhay</span> <br>Sah From Bihar</h1>
+            </div>
+        </div>
+    </div>
+    <!-----about------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                <img src="aa/3.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p1>Web Developer adept in working in front-end development process.
+                        Highly Skilled in programing design, development and implementation of function specification .</p1>
+                        <div class="tab-title">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links"onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li>Web Development</li>
+                                <!-- <li><span>UI/UX</span> <br>Designing Web/App ineterfaces</li> -->
+                                <li>Front-end Developer</li>
+                                <li>Web Designing</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Web Development</span><br>Fresher</li>
+                                <li><span>Front-end Developer</span><br>Fresher</li>
+                                <li><span>Web Designing</span><br>Fresher</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2020</span><br>10th From CBSE Board</li>
+                                <li><span>2020-2022</span><br>12th From BSEB Board</li>
+                                <li><span>2022-2024</span><br>Pursuing BCA From ITS Gaziabaad </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--service-->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title"> My services</h1>
+            <div class="service-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis saepe voluptas, sint suscipit nisi facilis vel quidem doloribus quaerat maxime?</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Website Design</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis saepe voluptas, sint suscipit nisi facilis vel quidem doloribus quaerat maxime?</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>Front-end Developer</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis saepe voluptas, sint suscipit nisi facilis vel quidem doloribus quaerat maxime?</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----portfoilo-->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="image/image (1).png">
+                    <div class="layer">
+                        <h3>Social Meadia App</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem officia est eveniet? Minima, eius voluptates?</p>
+                        <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/image (2).png">
+                    <div class="layer">
+                        <h3>Social Meadia App</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem officia est eveniet? Minima, eius voluptates?</p>
+                        <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/image (3).png">
+                    <div class="layer">
+                        <h3>Social Telephone</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem officia est eveniet? Minima, eius voluptates?</p>
+                        <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!-------contact-------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title"> Contact Me</h1>
+                    <p><i class="fa-sharp fa-solid fa-envelope-circle-check"></i> abhaysah462@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i> +916287221693</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+                    </div>
+                    <a href="my cv/abhay.pdf" download class="btn btn2">Download Cv</a>
+                </div>
+                <div class="contact-right">
+                    <form >
+
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy Abhay. Made with <i class="fa-solid fa-heart"></i></p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+
+    </script>
+</body>
+</html>
